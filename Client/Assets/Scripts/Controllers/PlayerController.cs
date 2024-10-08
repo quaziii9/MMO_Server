@@ -151,8 +151,10 @@ public class PlayerController : CreatureController
 		GameObject go = Managers.Object.Find(GetFrontCellPos());
 		if(go!= null)
 		{
-			Debug.Log(go.name);
-		}
+            CreatureController cc = go.GetComponent<CreatureController>();
+            if (cc != null)
+                cc.OnDamaged();
+        }
         // 대기 시간
         _rangeSkill = false;
 		yield return new WaitForSeconds(0.5f);
