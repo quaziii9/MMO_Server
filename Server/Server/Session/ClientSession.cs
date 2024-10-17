@@ -1,64 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Net.Sockets;
-using System.Threading;
-using System.Threading.Tasks;
-using ServerCore;
-using System.Net;
+﻿using Google.Protobuf;
 using Google.Protobuf.Protocol;
-using Google.Protobuf;
+using Server.Game;
+using ServerCore;
+using System;
+using System.Net;
 
 namespace Server
 {
-	class ClientSession : PacketSession
-	{
-		public int SessionId { get; set; }
+    public class ClientSession : PacketSession
+    {
+        public Player MyPlayer { get; set; }
+        public int SessionId { get; set; }
 
-		public void Send(IMessage packet)
-		{
-			string msgName = packet.Descriptor.Name.Replace("_", string.Empty);	
-			MsgId msgId = (MsgId)Enum.Parse(typeof(MsgId), msgName);
+        public void Send(IMessage packet)
+        {
+            string msgName = packet.Descriptor.Name.Replace("_", string.Empty);
+            MsgId msgId = (MsgId)Enum.Parse(typeof(MsgId), msgName);
 
             ushort size = (ushort)packet.CalculateSize();
             byte[] sendBuffer = new byte[size + 4];
-            Array.Copy(BitConverter.GetBytes(size + 4), 0, sendBuffer, 0, sizeof(ushort));
+            Array.Copy(BitConverter.GetBytes((ushort)(size + 4)), 0, sendBuffer, 0, sizeof(ushort));
             Array.Copy(BitConverter.GetBytes((ushort)msgId), 0, sendBuffer, 2, sizeof(ushort));
             Array.Copy(packet.ToByteArray(), 0, sendBuffer, 4, size);
 
-			Send(new ArraySegment<byte>(sendBuffer));	
+            Send(new ArraySegment<byte>(sendBuffer));
         }
 
-		public override void OnConnected(EndPoint endPoint)
-		{
-			Console.WriteLine($"OnConnected : {endPoint}");
+        public override void OnConnected(EndPoint endPoint)
+        {
+            Console.WriteLine($"OnConnected : {endPoint}");
 
-			// PROTO Test
-			S_Chat chat = new S_Chat()
-			{
-				Context = "안녕하세요"
-			};
+            // PROTO Test
+            MyPlayer = PlayerManager.Instance.Add();
+            {
+                MyPlayer.Info.Name = $"Player _{MyPlayer.Info.PlayerId}";
+                MyPlayer.Info.PosX = 0;
+                MyPlayer.Info.PosY = 0;
+                MyPlayer.Session = this;
+            }
+            RoomManager.Instance.Find(1).EnterGame(MyPlayer);
+        }
 
-	
+        public override void OnRecvPacket(ArraySegment<byte> buffer)
+        {
+            PacketManager.Instance.OnRecvPacket(this, buffer);
+        }
 
-			Send(chat);
-		}
+        public override void OnDisconnected(EndPoint endPoint)
+        {
+            RoomManager.Instance.Find(1).LeaveGame(MyPlayer.Info.PlayerId);
 
-		public override void OnRecvPacket(ArraySegment<byte> buffer)
-		{
-			PacketManager.Instance.OnRecvPacket(this, buffer);
-		}
+            SessionManager.Instance.Remove(this);
 
-		public override void OnDisconnected(EndPoint endPoint)
-		{
-			SessionManager.Instance.Remove(this);
+            Console.WriteLine($"OnDisconnected : {endPoint}");
+        }
 
-			Console.WriteLine($"OnDisconnected : {endPoint}");
-		}
-
-		public override void OnSend(int numOfBytes)
-		{
-			//Console.WriteLine($"Transferred bytes: {numOfBytes}");
-		}
-	}
+        public override void OnSend(int numOfBytes)
+        {
+            //Console.WriteLine($"Transferred bytes: {numOfBytes}");
+        }
+    }
 }
