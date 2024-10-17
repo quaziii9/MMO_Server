@@ -5,12 +5,12 @@ using UnityEngine;
 public class Define
 {
     public enum CreatureState
-    {
+	{
         Idle,
         Moving,
-        Skil,
+        Skill,
         Dead,
-    }
+	}
 
     public enum MoveDir
 	{
