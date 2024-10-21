@@ -1,3 +1,4 @@
+using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,10 +69,23 @@ public class MyPlayerController : PlayerController
         }
     }
 
+    protected override void MoveToNextPos()
+    {
+        CreatureState prevState = State;
+        Vector3Int prevCellPos = CellPos;
+
+        base.MoveToNextPos();
+
+        if(prevState != State || CellPos != prevCellPos)
+        {
+            C_Move movePacket = new C_Move();
+            movePacket.PosInfo = PosInfo;
+            Managers.Network.Send(movePacket);
+        }
+    }
+
     void LateUpdate()
     {
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
-
-    
 }

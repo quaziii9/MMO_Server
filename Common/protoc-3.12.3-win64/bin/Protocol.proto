@@ -45,21 +45,21 @@ message S_Despawn {
 }
 
 message C_Move {
-	PositoinInfo posInfo = 1;
+	PositionInfo posInfo = 1;
 }
 
 message S_Move {
 	int32 playerId = 1;
-	PositoinInfo posInfo = 2;
+	PositionInfo posInfo = 2;
 }
 
 message PlayerInfo{
 	int32 playerId= 1;
 	string name = 2;
-	PositoinInfo posInfo = 3;
+	PositionInfo posInfo = 3;
 }
 
-message PositoinInfo {
+message PositionInfo {
 	CreatureState state = 1;
 	MoveDir moveDir = 2;
 	int32 posX =3;

@@ -29,11 +29,11 @@ namespace Google.Protobuf.Protocol {
             "MhQuUHJvdG9jb2wuUGxheWVySW5mbyINCgtTX0xlYXZlR2FtZSIwCgdTX1Nw",
             "YXduEiUKB3BsYXllcnMYASADKAsyFC5Qcm90b2NvbC5QbGF5ZXJJbmZvIh4K",
             "CVNfRGVzcGF3bhIRCglwbGF5ZXJJZHMYASADKAUiMQoGQ19Nb3ZlEicKB3Bv",
-            "c0luZm8YASABKAsyFi5Qcm90b2NvbC5Qb3NpdG9pbkluZm8iQwoGU19Nb3Zl",
+            "c0luZm8YASABKAsyFi5Qcm90b2NvbC5Qb3NpdGlvbkluZm8iQwoGU19Nb3Zl",
             "EhAKCHBsYXllcklkGAEgASgFEicKB3Bvc0luZm8YAiABKAsyFi5Qcm90b2Nv",
-            "bC5Qb3NpdG9pbkluZm8iVQoKUGxheWVySW5mbxIQCghwbGF5ZXJJZBgBIAEo",
+            "bC5Qb3NpdGlvbkluZm8iVQoKUGxheWVySW5mbxIQCghwbGF5ZXJJZBgBIAEo",
             "BRIMCgRuYW1lGAIgASgJEicKB3Bvc0luZm8YAyABKAsyFi5Qcm90b2NvbC5Q",
-            "b3NpdG9pbkluZm8idgoMUG9zaXRvaW5JbmZvEiYKBXN0YXRlGAEgASgOMhcu",
+            "b3NpdGlvbkluZm8idgoMUG9zaXRpb25JbmZvEiYKBXN0YXRlGAEgASgOMhcu",
             "UHJvdG9jb2wuQ3JlYXR1cmVTdGF0ZRIiCgdtb3ZlRGlyGAIgASgOMhEuUHJv",
             "dG9jb2wuTW92ZURpchIMCgRwb3NYGAMgASgFEgwKBHBvc1kYBCABKAUqXwoF",
             "TXNnSWQSEAoMU19FTlRFUl9HQU1FEAASEAoMU19MRUFWRV9HQU1FEAESCwoH",
@@ -52,7 +52,7 @@ namespace Google.Protobuf.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.C_Move), global::Google.Protobuf.Protocol.C_Move.Parser, new[]{ "PosInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.S_Move), global::Google.Protobuf.Protocol.S_Move.Parser, new[]{ "PlayerId", "PosInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.PlayerInfo), global::Google.Protobuf.Protocol.PlayerInfo.Parser, new[]{ "PlayerId", "Name", "PosInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.PositoinInfo), global::Google.Protobuf.Protocol.PositoinInfo.Parser, new[]{ "State", "MoveDir", "PosX", "PosY" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Protocol.PositionInfo), global::Google.Protobuf.Protocol.PositionInfo.Parser, new[]{ "State", "MoveDir", "PosX", "PosY" }, null, null, null, null)
           }));
     }
     #endregion
@@ -601,9 +601,9 @@ namespace Google.Protobuf.Protocol {
 
     /// <summary>Field number for the "posInfo" field.</summary>
     public const int PosInfoFieldNumber = 1;
-    private global::Google.Protobuf.Protocol.PositoinInfo posInfo_;
+    private global::Google.Protobuf.Protocol.PositionInfo posInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.PositoinInfo PosInfo {
+    public global::Google.Protobuf.Protocol.PositionInfo PosInfo {
       get { return posInfo_; }
       set {
         posInfo_ = value;
@@ -672,7 +672,7 @@ namespace Google.Protobuf.Protocol {
       }
       if (other.posInfo_ != null) {
         if (posInfo_ == null) {
-          PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+          PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
         }
         PosInfo.MergeFrom(other.PosInfo);
       }
@@ -689,7 +689,7 @@ namespace Google.Protobuf.Protocol {
             break;
           case 10: {
             if (posInfo_ == null) {
-              PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+              PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
             }
             input.ReadMessage(PosInfo);
             break;
@@ -748,9 +748,9 @@ namespace Google.Protobuf.Protocol {
 
     /// <summary>Field number for the "posInfo" field.</summary>
     public const int PosInfoFieldNumber = 2;
-    private global::Google.Protobuf.Protocol.PositoinInfo posInfo_;
+    private global::Google.Protobuf.Protocol.PositionInfo posInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.PositoinInfo PosInfo {
+    public global::Google.Protobuf.Protocol.PositionInfo PosInfo {
       get { return posInfo_; }
       set {
         posInfo_ = value;
@@ -831,7 +831,7 @@ namespace Google.Protobuf.Protocol {
       }
       if (other.posInfo_ != null) {
         if (posInfo_ == null) {
-          PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+          PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
         }
         PosInfo.MergeFrom(other.PosInfo);
       }
@@ -852,7 +852,7 @@ namespace Google.Protobuf.Protocol {
           }
           case 18: {
             if (posInfo_ == null) {
-              PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+              PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
             }
             input.ReadMessage(PosInfo);
             break;
@@ -923,9 +923,9 @@ namespace Google.Protobuf.Protocol {
 
     /// <summary>Field number for the "posInfo" field.</summary>
     public const int PosInfoFieldNumber = 3;
-    private global::Google.Protobuf.Protocol.PositoinInfo posInfo_;
+    private global::Google.Protobuf.Protocol.PositionInfo posInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.Protocol.PositoinInfo PosInfo {
+    public global::Google.Protobuf.Protocol.PositionInfo PosInfo {
       get { return posInfo_; }
       set {
         posInfo_ = value;
@@ -1018,7 +1018,7 @@ namespace Google.Protobuf.Protocol {
       }
       if (other.posInfo_ != null) {
         if (posInfo_ == null) {
-          PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+          PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
         }
         PosInfo.MergeFrom(other.PosInfo);
       }
@@ -1043,7 +1043,7 @@ namespace Google.Protobuf.Protocol {
           }
           case 26: {
             if (posInfo_ == null) {
-              PosInfo = new global::Google.Protobuf.Protocol.PositoinInfo();
+              PosInfo = new global::Google.Protobuf.Protocol.PositionInfo();
             }
             input.ReadMessage(PosInfo);
             break;
@@ -1054,11 +1054,11 @@ namespace Google.Protobuf.Protocol {
 
   }
 
-  public sealed partial class PositoinInfo : pb::IMessage<PositoinInfo> {
-    private static readonly pb::MessageParser<PositoinInfo> _parser = new pb::MessageParser<PositoinInfo>(() => new PositoinInfo());
+  public sealed partial class PositionInfo : pb::IMessage<PositionInfo> {
+    private static readonly pb::MessageParser<PositionInfo> _parser = new pb::MessageParser<PositionInfo>(() => new PositionInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PositoinInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<PositionInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1071,14 +1071,14 @@ namespace Google.Protobuf.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PositoinInfo() {
+    public PositionInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PositoinInfo(PositoinInfo other) : this() {
+    public PositionInfo(PositionInfo other) : this() {
       state_ = other.state_;
       moveDir_ = other.moveDir_;
       posX_ = other.posX_;
@@ -1087,8 +1087,8 @@ namespace Google.Protobuf.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PositoinInfo Clone() {
-      return new PositoinInfo(this);
+    public PositionInfo Clone() {
+      return new PositionInfo(this);
     }
 
     /// <summary>Field number for the "state" field.</summary>
@@ -1137,11 +1137,11 @@ namespace Google.Protobuf.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as PositoinInfo);
+      return Equals(other as PositionInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PositoinInfo other) {
+    public bool Equals(PositionInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1218,7 +1218,7 @@ namespace Google.Protobuf.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PositoinInfo other) {
+    public void MergeFrom(PositionInfo other) {
       if (other == null) {
         return;
       }
