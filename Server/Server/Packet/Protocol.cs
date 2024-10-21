@@ -31,7 +31,7 @@ namespace Google.Protobuf.Protocol {
             "CVNfRGVzcGF3bhIRCglwbGF5ZXJJZHMYASADKAUiJAoGQ19Nb3ZlEgwKBHBv",
             "c1gYASABKAUSDAoEcG9zWRgCIAEoBSI2CgZTX01vdmUSEAoIcGxheWVySWQY",
             "ASABKAUSDAoEcG9zWBgCIAEoBRIMCgRwb3NZGAMgASgFIkgKClBsYXllcklu",
-            "Zm8SEAoIUGxheWVySWQYASABKAUSDAoEbmFtZRgCIAEoCRIMCgRwb3NYGAMg",
+            "Zm8SEAoIcGxheWVySWQYASABKAUSDAoEbmFtZRgCIAEoCRIMCgRwb3NYGAMg",
             "ASgFEgwKBHBvc1kYBCABKAUqXwoFTXNnSWQSEAoMU19FTlRFUl9HQU1FEAAS",
             "EAoMU19MRUFWRV9HQU1FEAESCwoHU19TUEFXThACEg0KCVNfREVTUEFXThAD",
             "EgoKBkNfTU9WRRAEEgoKBlNfTU9WRRAFQhuqAhhHb29nbGUuUHJvdG9idWYu",
@@ -922,7 +922,7 @@ namespace Google.Protobuf.Protocol {
       return new PlayerInfo(this);
     }
 
-    /// <summary>Field number for the "PlayerId" field.</summary>
+    /// <summary>Field number for the "playerId" field.</summary>
     public const int PlayerIdFieldNumber = 1;
     private int playerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

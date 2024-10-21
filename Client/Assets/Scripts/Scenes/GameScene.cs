@@ -15,7 +15,6 @@ public class GameScene : BaseScene
         Screen.SetResolution(640, 450, false);
         //GameObject player = Managers.Resource.Instantiate("Creature/Player");
         //player.name = "Player";
-
         //Managers.Object.Add(player);
         
 
